@@ -117,34 +117,29 @@ div[style*='background-color: #f8f9fa'] {
   color: var(--ifm-color-content) !important;
 }
 
-/* 🌙 Fix for active menu links in dark mode */
-[data-theme='dark'] .menu__link--active,
-[data-theme='dark'] .menu__link:hover {
-  color: #ffffff !important; /* Ensures bright white text */
-  background-color: rgba(255, 255, 255, 0.15) !important; /* Slight highlight effect */
-}
-
-/* 🌙 Ensure sidebar active links are readable */
-[data-theme='dark'] .menu__list-item-active > .menu__link {
-  color: #ffffff !important;
+/* 🌙 Fix for active sidebar links in dark mode */
+[data-theme='dark'] .menu__link--active {
+  color: #ffffff !important; /* Bright white text */
+  background-color: rgba(255, 255, 255, 0.2) !important; /* Light gray highlight */
   font-weight: bold !important;
 }
 
-/* 🌙 Ensure navbar links are bright in dark mode */
-[data-theme='dark'] .navbar__link--active,
-[data-theme='dark'] .navbar__link:hover {
+/* 🌙 Ensure hover states in dark mode */
+[data-theme='dark'] .menu__link:hover {
   color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* 🌙 Fix for sidebar links when collapsed */
+/* 🌙 Fix for active navbar links in dark mode */
+[data-theme='dark'] .navbar__link--active,
+[data-theme='dark'] .navbar__link:hover {
+  color: #ffffff !important; /* Ensure navbar links are visible */
+  text-decoration: underline !important;
+}
+
+/* 🌙 Ensure sidebar dropdowns are visible */
 [data-theme='dark'] .menu__caret {
   color: #ffffff !important;
 }
 
-/* 🌞 Ensure proper contrast in light mode */
-[data-theme='light'] .menu__link--active,
-[data-theme='light'] .menu__link:hover {
-  color: #2c3e50 !important;
-  background-color: rgba(0, 0, 0, 0.05) !important;
-}
 
