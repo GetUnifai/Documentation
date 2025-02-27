@@ -15,26 +15,26 @@
 
 /* 🌙 Dark mode fixes */
 [data-theme='dark'] {
-  --ifm-color-content: #ffffff;
+  --ifm-color-content: #ffffff !important; /* Ensure all text is white */
   --ifm-background-surface-color: #1a202c;
-  --ifm-menu-color: #ffffff !important; /* Force menu text to be white */
+  --ifm-menu-color: #ffffff !important; /* Sidebar links */
   --ifm-navbar-background-color: #1a202c;
   --ifm-navbar-link-color: #ffffff !important;
-  --ifm-color-primary: #4c688f;
-  --ifm-color-primary-dark: #3f5a7d;
-  --ifm-color-primary-darker: #2c3e50;
-  --ifm-color-primary-darkest: #1e2c3d;
-  --ifm-color-primary-light: #597ba5;
-  --ifm-color-primary-lighter: #6c8db7;
-  --ifm-color-primary-lightest: #7fa0c9;
+  --ifm-color-primary: #6c8db7; /* Lighter blue for better contrast */
+  --ifm-color-primary-dark: #5a799d;
+  --ifm-color-primary-darker: #4c688f;
+  --ifm-color-primary-darkest: #3f5a7d;
+  --ifm-color-primary-light: #80a0c0;
+  --ifm-color-primary-lighter: #a2b9d5;
+  --ifm-color-primary-lightest: #d0e0f0;
 }
 
 /* 🖼️ Navbar logo size */
 .navbar__logo img {
-  max-height: 32px !important; /* Ensures logo doesn't scale incorrectly */
+  max-height: 32px !important;
 }
 
-/* 📌 Ensure menu links are always visible */
+/* 📌 Ensure all menu links are visible */
 a.menu__link {
   color: var(--ifm-menu-color) !important;
 }
@@ -43,7 +43,7 @@ a.menu__link {
 .menu__link--active,
 .menu__link:hover {
   color: var(--ifm-color-primary-lightest) !important;
-  background-color: var(--ifm-background-surface-color) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* 📌 Fix navbar links */
@@ -59,41 +59,39 @@ a.menu__link {
   background-color: var(--ifm-background-surface-color) !important;
 }
 
-/* 📌 Breadcrumbs and pagination links */
-.breadcrumbs__link,
-.pagination-nav__label {
+/* 📌 Fix sidebar link visibility */
+.menu__link {
   color: var(--ifm-menu-color) !important;
 }
 
-/* 📌 Sidebar active and hover states */
-.menu__link--active {
-  color: var(--ifm-color-primary-lightest) !important;
-  background-color: var(--ifm-background-surface-color) !important;
+/* 📌 Fix active sidebar links */
+.menu__link--active,
+.menu__link--active:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  font-weight: bold !important;
 }
 
-.menu__link:hover {
-  color: var(--ifm-color-primary-lightest) !important;
-  background-color: var(--ifm-background-surface-color) !important;
+/* 📌 Breadcrumbs and pagination links */
+.breadcrumbs__link,
+.pagination-nav__label {
+  color: #ffffff !important;
 }
 
-/* 📌 Navbar title */
-.navbar__title {
-  color: var(--ifm-color-content) !important;
+/* 📌 Fix navbar links */
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .navbar__title,
+[data-theme='dark'] .navbar__link--active,
+[data-theme='dark'] .navbar__link:hover {
+  color: #ffffff !important;
 }
 
-/* 📌 Fix button styling */
-.button {
-  color: var(--ifm-color-white) !important;
-  background-color: var(--ifm-color-primary) !important;
-  border-color: var(--ifm-color-primary) !important;
+/* 📌 Ensure sidebar dropdowns are visible */
+[data-theme='dark'] .menu__caret {
+  color: #ffffff !important;
 }
 
-.button:hover {
-  background-color: var(--ifm-color-primary-darkest) !important;
-  border-color: var(--ifm-color-primary-darkest) !important;
-}
-
-/* 📌 Tables */
+/* 📌 Fix tables */
 table {
   background-color: var(--ifm-background-surface-color);
   color: var(--ifm-color-content);
@@ -111,35 +109,20 @@ th {
   color: var(--ifm-color-white);
 }
 
-/* 📌 Ensure vision.mdx blocks don't have a light background in dark mode */
+/* 📌 Ensure vision.mdx blocks are readable in dark mode */
 div[style*='background-color: #f8f9fa'] {
   background-color: var(--ifm-background-surface-color) !important;
   color: var(--ifm-color-content) !important;
 }
 
-/* 🌙 Fix active sidebar links in dark mode */
-[data-theme='dark'] .menu__link--active,
-[data-theme='dark'] .menu__link--active:hover {
-  color: #ffffff !important; /* Bright white text */
-  background-color: rgba(255, 255, 255, 0.2) !important; /* Light gray highlight */
-  font-weight: bold !important;
+/* 📌 Fix buttons */
+.button {
+  color: var(--ifm-color-white) !important;
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
 }
 
-/* 🌙 Ensure hover states in dark mode */
-[data-theme='dark'] .menu__link:hover {
-  color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* 🌙 Fix navbar links in dark mode */
-[data-theme='dark'] .navbar__link,
-[data-theme='dark'] .navbar__title,
-[data-theme='dark'] .navbar__link--active,
-[data-theme='dark'] .navbar__link:hover {
-  color: #ffffff !important; /* Ensure navbar links are visible */
-}
-
-/* 🌙 Ensure sidebar dropdowns are visible */
-[data-theme='dark'] .menu__caret {
-  color: #ffffff !important;
+.button:hover {
+  background-color: var(--ifm-color-primary-darkest) !important;
+  border-color: var(--ifm-color-primary-darkest) !important;
 }
