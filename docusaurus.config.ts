@@ -33,7 +33,7 @@ const config = {
       title: 'UnifAI Docs',
       logo: { 
         alt: 'UnifAI Logo', 
-        src: 'img/unifai%20logo%20(1).jpg', // Use your uploaded logo
+        src: 'img/unifai-logo.jpg', // Use your uploaded logo
         width: 32, // Optional: Adjust for navbar size (32x32 is typical)
         height: 32 // Optional: Keeps aspect ratio
       },
