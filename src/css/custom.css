@@ -1,4 +1,4 @@
-/* Light mode (default) */
+/* 🌞 Light mode (default) */
 :root {
   --ifm-color-primary: #2c3e50;
   --ifm-color-primary-dark: #233240;
@@ -13,13 +13,13 @@
   --ifm-navbar-background-color: #ffffff;
 }
 
-/* Dark mode fixes */
+/* 🌙 Dark mode fixes */
 [data-theme='dark'] {
   --ifm-color-content: #ffffff;
   --ifm-background-surface-color: #1a202c;
-  --ifm-menu-color: #ffffff; /* Ensure links are white */
+  --ifm-menu-color: #ffffff !important; /* Force menu text to be white */
   --ifm-navbar-background-color: #1a202c;
-  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-color: #ffffff !important;
   --ifm-color-primary: #4c688f;
   --ifm-color-primary-dark: #3f5a7d;
   --ifm-color-primary-darker: #2c3e50;
@@ -29,43 +29,43 @@
   --ifm-color-primary-lightest: #7fa0c9;
 }
 
-/* Navbar logo size */
+/* 🖼️ Navbar logo size */
 .navbar__logo img {
   max-height: 32px !important; /* Ensures logo doesn't scale incorrectly */
 }
 
-/* Ensure menu links are always visible */
+/* 📌 Ensure menu links are always visible */
 a.menu__link {
   color: var(--ifm-menu-color) !important;
 }
 
-/* Fix hover and active states */
+/* 📌 Fix hover and active states */
 .menu__link--active,
 .menu__link:hover {
   color: var(--ifm-color-primary-lightest) !important;
   background-color: var(--ifm-background-surface-color) !important;
 }
 
-/* Fix navbar links */
+/* 📌 Fix navbar links */
 .navbar__item,
 .navbar__link,
 .navbar__title {
   color: var(--ifm-navbar-link-color) !important;
 }
 
-/* Ensure doc content is readable in dark mode */
+/* 📌 Ensure doc content is readable in dark mode */
 .markdown {
-  color: var(--ifm-color-content);
-  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content) !important;
+  background-color: var(--ifm-background-surface-color) !important;
 }
 
-/* Breadcrumbs and pagination links */
+/* 📌 Breadcrumbs and pagination links */
 .breadcrumbs__link,
 .pagination-nav__label {
   color: var(--ifm-menu-color) !important;
 }
 
-/* Sidebar active and hover states */
+/* 📌 Sidebar active and hover states */
 .menu__link--active {
   color: var(--ifm-color-primary-lightest) !important;
   background-color: var(--ifm-background-surface-color) !important;
@@ -76,12 +76,12 @@ a.menu__link {
   background-color: var(--ifm-background-surface-color) !important;
 }
 
-/* Navbar title */
+/* 📌 Navbar title */
 .navbar__title {
   color: var(--ifm-color-content) !important;
 }
 
-/* Fix button styling */
+/* 📌 Fix button styling */
 .button {
   color: var(--ifm-color-white) !important;
   background-color: var(--ifm-color-primary) !important;
@@ -93,7 +93,7 @@ a.menu__link {
   border-color: var(--ifm-color-primary-darkest) !important;
 }
 
-/* Tables */
+/* 📌 Tables */
 table {
   background-color: var(--ifm-background-surface-color);
   color: var(--ifm-color-content);
@@ -111,14 +111,15 @@ th {
   color: var(--ifm-color-white);
 }
 
-/* Ensure vision.mdx blocks don't have a light background in dark mode */
+/* 📌 Ensure vision.mdx blocks don't have a light background in dark mode */
 div[style*='background-color: #f8f9fa'] {
   background-color: var(--ifm-background-surface-color) !important;
   color: var(--ifm-color-content) !important;
 }
 
-/* 🌙 Fix for active sidebar links in dark mode */
-[data-theme='dark'] .menu__link--active {
+/* 🌙 Fix active sidebar links in dark mode */
+[data-theme='dark'] .menu__link--active,
+[data-theme='dark'] .menu__link--active:hover {
   color: #ffffff !important; /* Bright white text */
   background-color: rgba(255, 255, 255, 0.2) !important; /* Light gray highlight */
   font-weight: bold !important;
@@ -130,16 +131,15 @@ div[style*='background-color: #f8f9fa'] {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* 🌙 Fix for active navbar links in dark mode */
+/* 🌙 Fix navbar links in dark mode */
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .navbar__title,
 [data-theme='dark'] .navbar__link--active,
 [data-theme='dark'] .navbar__link:hover {
   color: #ffffff !important; /* Ensure navbar links are visible */
-  text-decoration: underline !important;
 }
 
 /* 🌙 Ensure sidebar dropdowns are visible */
 [data-theme='dark'] .menu__caret {
   color: #ffffff !important;
 }
-
-
