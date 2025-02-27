@@ -18,6 +18,29 @@
   --ifm-color-primary-light: #597ba5;
   --ifm-color-primary-lighter: #6c8db7;
   --ifm-color-primary-lightest: #7fa0c9;
+
+  /* Dark mode adjustments for specific Docusaurus classes */
+  .breadcrumbs__link,
+  .pagination-nav__label,
+  .navbar__item,
+  .navbar__link,
+  .navbar__title,
+  .menu__link {
+    color: var(--ifm-color-content) !important; /* White text for readability */
+  }
+
+  /* Sidebar active and hover states */
+  .menu__link--active,
+  .menu__link:hover {
+    color: var(--ifm-color-primary-lightest) !important; /* Bright primary color for contrast */
+    background-color: var(--ifm-background-surface-color) !important; /* Dark background for hover/active */
+  }
+
+  /* Navbar title and active link */
+  .navbar__title,
+  .navbar__link--active {
+    color: var(--ifm-color-content) !important; /* White for dark mode */
+  }
 }
 
 /* Ensure doc content (e.g., vision.mdx) is readable in dark mode */
