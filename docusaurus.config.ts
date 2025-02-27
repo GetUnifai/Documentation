@@ -4,12 +4,12 @@ const config = {
   title: 'UnifAI Documentation',
   tagline: 'Explore the power of UnifAI',
   url: 'https://getunifai.github.io',
-  baseUrl: '/Documentation/', // Updated to match new repo
+  baseUrl: '/Documentation/', // Matches GitHub Pages path
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'GetUnifai',
-  projectName: 'Documentation', // Updated to match repo name
+  projectName: 'Documentation',
   presets: [
     [
       'classic',
@@ -18,7 +18,8 @@ const config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/', // Docs at /Documentation/
           path: 'src/docs',
-          // Removed homePageId: 'vision' (not supported in Docusaurus 3.7.0)
+          // Removed homePageId (not supported in Docusaurus 3.7.0)
+          // Use slug: / in vision.mdx instead
         },
         blog: false,
         theme: {
@@ -30,7 +31,12 @@ const config = {
   themeConfig: {
     navbar: {
       title: 'UnifAI Docs',
-      logo: { alt: 'UnifAI Logo', src: 'img/favicon.ico' }, // Use favicon.ico temporarily
+      logo: { 
+        alt: 'UnifAI Logo', 
+        src: 'img/unifai%20logo%20(1).jpg', // Use your uploaded logo
+        width: 32, // Optional: Adjust for navbar size (32x32 is typical)
+        height: 32 // Optional: Keeps aspect ratio
+      },
       items: [
         { type: 'doc', docId: 'vision', position: 'left', label: 'Docs' }, // Links to /Documentation/vision
         { href: 'https://github.com/GetUnifai/Unifai', label: 'GitHub', position: 'right' },
