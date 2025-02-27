@@ -30,14 +30,21 @@
   }
 
   /* Sidebar active and hover states */
-  .menu__link--active,
+  .menu__link--active {
+    color: var(--ifm-color-primary-lightest) !important; /* Bright primary color for contrast */
+    background-color: var(--ifm-background-surface-color) !important; /* Dark background for hover/active */
+  }
+  
   .menu__link:hover {
     color: var(--ifm-color-primary-lightest) !important; /* Bright primary color for contrast */
     background-color: var(--ifm-background-surface-color) !important; /* Dark background for hover/active */
   }
 
   /* Navbar title and active link */
-  .navbar__title,
+  .navbar__title {
+    color: var(--ifm-color-content) !important; /* White for dark mode */
+  }
+  
   .navbar__link--active {
     color: var(--ifm-color-content) !important; /* White for dark mode */
   }
