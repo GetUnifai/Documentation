@@ -31,9 +31,9 @@ const config = {
   themeConfig: {
     navbar: {
       title: 'UnifAI Docs',
-      logo: { 
-        alt: 'UnifAI Logo', 
-        src: 'img/logo.svg', // Use your uploaded logo
+      logo: {
+        alt: 'UnifAI Logo',
+        src: '/img/logo.svg', // Use your uploaded logo
         width: 32, // Optional: Adjust for navbar size (32x32 is typical)
         height: 32 // Optional: Keeps aspect ratio
       },
