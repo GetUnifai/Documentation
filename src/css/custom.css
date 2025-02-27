@@ -7,3 +7,27 @@
   --ifm-color-primary-lighter: #4c688f;
   --ifm-color-primary-lightest: #597ba5;
 }
+
+[data-theme='dark'] {
+  --ifm-color-content: #ffffff; /* White text for dark backgrounds */
+  --ifm-background-surface-color: #1a202c; /* Darker background for better contrast */
+  --ifm-color-primary: #4c688f; /* Lighter primary color for dark mode */
+  --ifm-color-primary-dark: #3f5a7d;
+  --ifm-color-primary-darker: #2c3e50;
+  --ifm-color-primary-darkest: #1e2c3d;
+  --ifm-color-primary-light: #597ba5;
+  --ifm-color-primary-lighter: #6c8db7;
+  --ifm-color-primary-lightest: #7fa0c9;
+}
+
+/* Ensure doc content (e.g., vision.mdx) is readable in dark mode */
+.markdown {
+  color: var(--ifm-color-content);
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Adjust specific styles from vision.mdx if needed */
+div[style*='background-color: #f8f9fa'] {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+}
