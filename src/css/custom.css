@@ -1,3 +1,4 @@
+/* Light mode (default) */
 :root {
   --ifm-color-primary: #2c3e50;
   --ifm-color-primary-dark: #233240;
@@ -6,57 +7,111 @@
   --ifm-color-primary-light: #3f5a7d;
   --ifm-color-primary-lighter: #4c688f;
   --ifm-color-primary-lightest: #597ba5;
+
+  --ifm-menu-color: var(--ifm-color-primary);
+  --ifm-navbar-link-color: var(--ifm-color-primary);
+  --ifm-navbar-background-color: #ffffff;
 }
 
+/* Dark mode fixes */
 [data-theme='dark'] {
-  --ifm-color-content: #ffffff; /* White text for dark backgrounds */
-  --ifm-background-surface-color: #1a202c; /* Darker background for better contrast */
-  --ifm-color-primary: #4c688f; /* Lighter primary color for dark mode */
+  --ifm-color-content: #ffffff;
+  --ifm-background-surface-color: #1a202c;
+  --ifm-menu-color: #ffffff; /* Ensure links are white */
+  --ifm-navbar-background-color: #1a202c;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-color-primary: #4c688f;
   --ifm-color-primary-dark: #3f5a7d;
   --ifm-color-primary-darker: #2c3e50;
   --ifm-color-primary-darkest: #1e2c3d;
   --ifm-color-primary-light: #597ba5;
   --ifm-color-primary-lighter: #6c8db7;
   --ifm-color-primary-lightest: #7fa0c9;
-
-  /* Dark mode adjustments for specific Docusaurus classes */
-  .breadcrumbs__link,
-  .pagination-nav__label,
-  .navbar__item,
-  .navbar__link,
-  .navbar__title,
-  .menu__link {
-    color: var(--ifm-color-content) !important; /* White text for readability */
-  }
-
-  /* Sidebar active and hover states */
-  .menu__link--active {
-    color: var(--ifm-color-primary-lightest) !important; /* Bright primary color for contrast */
-    background-color: var(--ifm-background-surface-color) !important; /* Dark background for hover/active */
-  }
-  
-  .menu__link:hover {
-    color: var(--ifm-color-primary-lightest) !important; /* Bright primary color for contrast */
-    background-color: var(--ifm-background-surface-color) !important; /* Dark background for hover/active */
-  }
-
-  /* Navbar title and active link */
-  .navbar__title {
-    color: var(--ifm-color-content) !important; /* White for dark mode */
-  }
-  
-  .navbar__link--active {
-    color: var(--ifm-color-content) !important; /* White for dark mode */
-  }
 }
 
-/* Ensure doc content (e.g., vision.mdx) is readable in dark mode */
+/* Navbar logo size */
+.navbar__logo img {
+  max-height: 32px !important; /* Ensures logo doesn't scale incorrectly */
+}
+
+/* Ensure menu links are always visible */
+a.menu__link {
+  color: var(--ifm-menu-color) !important;
+}
+
+/* Fix hover and active states */
+.menu__link--active,
+.menu__link:hover {
+  color: var(--ifm-color-primary-lightest) !important;
+  background-color: var(--ifm-background-surface-color) !important;
+}
+
+/* Fix navbar links */
+.navbar__item,
+.navbar__link,
+.navbar__title {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+/* Ensure doc content is readable in dark mode */
 .markdown {
   color: var(--ifm-color-content);
   background-color: var(--ifm-background-surface-color);
 }
 
-/* Adjust specific styles from vision.mdx if needed */
+/* Breadcrumbs and pagination links */
+.breadcrumbs__link,
+.pagination-nav__label {
+  color: var(--ifm-menu-color) !important;
+}
+
+/* Sidebar active and hover states */
+.menu__link--active {
+  color: var(--ifm-color-primary-lightest) !important;
+  background-color: var(--ifm-background-surface-color) !important;
+}
+
+.menu__link:hover {
+  color: var(--ifm-color-primary-lightest) !important;
+  background-color: var(--ifm-background-surface-color) !important;
+}
+
+/* Navbar title */
+.navbar__title {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Fix button styling */
+.button {
+  color: var(--ifm-color-white) !important;
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+.button:hover {
+  background-color: var(--ifm-color-primary-darkest) !important;
+  border-color: var(--ifm-color-primary-darkest) !important;
+}
+
+/* Tables */
+table {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--ifm-color-gray-300);
+  padding: 8px;
+}
+
+th {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+/* Ensure vision.mdx blocks don't have a light background in dark mode */
 div[style*='background-color: #f8f9fa'] {
   background-color: var(--ifm-background-surface-color) !important;
   color: var(--ifm-color-content) !important;
