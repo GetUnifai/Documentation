@@ -3,5 +3,16 @@
 <div style={{ backgroundColor: '#e9ecef', padding: '20px', borderRadius: '8px' }}>
   <h2 style={{ color: '#16a085' }}>Input and Output</h2>
   <p style={{ fontSize: '16px', lineHeight: 1.5, color: '#34495e' }}>User inputs appear in the chat log. AI agent responses are added below in randomized order.</p>
-  <p style={{ fontSize: '16px', lineHeight: 1.5, color: '#34495e' }}><strong>Agent Toggle:</strong> Default to one agent; toggle switches enable 2 or 3 agents.</p>
+  <p style={{ fontSize: '16px', lineHeight: 1.5, color: '#34495e' }}>
+    <strong>Commands:</strong>
+    <ul>
+      <li><strong>/wallet</strong> + <strong>&lt;address&gt;</strong>: View tokens held by a Solana wallet.</li>
+      <li><strong>/holders</strong> + <strong>&lt;ca&gt;</strong>: Check holder distribution for a Solana token.</li>
+      <li><strong>/safety</strong> + <strong>&lt;token&gt;</strong>: Assess the safety of a Solana token.</li>
+      <li><strong>/token</strong> + <strong>&lt;token&gt;</strong>: Get detailed info for a Solana token.</li>
+      <li><strong>/bundles</strong> + <strong>&lt;token&gt;</strong>: Analyze token bundles. (Available for pump.fun tokens only)</li>
+      <li><strong>/social</strong> + <strong>&lt;token&gt;</strong>: Coming soon: Get social media stats for a Solana token.</li>
+      <li><strong>/commands</strong>: List all available commands.</li>
+    </ul>
+  </p>
 </div>
